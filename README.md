@@ -1,78 +1,70 @@
-# Otimização Logística com Investigação Operacional
-### €1,37 Bilhões em oportunidades identificadas (+30% com Simplex e Dijkstra)
+# Logistics Optimisation with Operations Research
+### €1.37B in opportunities identified · ROI 420%
+
+> **Sector:** Logistics / Warehouse Operations  
+> **Data:** 3,204 products · 5 categories · 12 months  
+> **Tools:** SQL · Excel · Power BI · Simplex · Dijkstra · Python ETL  
+> **Languages:** Português · English
 
 ---
 
-## Resumo do Projeto
+## Live Systems
 
-| | |
-|---|---|
-| **Sector** | Logística / Armazém |
-| **Dados analisados** | 3.204 produtos · 5 categorias |
-| **Custo logístico total** | €17,7 mil milhões/ano |
-| **Oportunidade identificada** | €1,37B/ano |
-| **Ferramentas** | Excel · SQL · Power BI · Simplex · Dijkstra |
-| **Idiomas** | Português · English |
+| System | Link | Status |
+|--------|------|--------|
+| 📊 Interactive Dashboard | *[coming soon]* | In development |
+| 🗄️ SQL Analysis (Google Colab) | *[coming soon]* | In development |
+| ⚙️ Optimisation App (Streamlit) | *[coming soon]* | In development |
 
 ---
 
-## Situação
+## STAR — Português
 
-Armazém com 3.204 produtos distribuídos por 5 categorias (Pharma, Electronics e outras).  
-A taxa de atendimento média era de **80%**, o que gerava **14.746 ruturas por mês** e uma perda de receita estimada em **€630 milhões/ano**.
+### Situação
+Armazém com 3.204 produtos distribuídos por 5 categorias (Pharma, Electronics e outras). Taxa de atendimento média de **80%**, gerando **14.746 rupturas por mês** e uma perda de receita estimada em **€630 milhões/ano**.
 
-Custo logístico total de **€17,7 mil milhões/ano** dividido em:
+Custo logístico total de €17,7 mil milhões/ano:
 - Custo de armazenagem: €2,83B — Pharma (4,27%) e Electronics (4,24%) lideravam
 - Custo de manuseamento: €14,87B — Pharma (4,40%) com maior custo
 
----
+### Tarefa
+Identificar as causas das rupturas e dos custos elevados e transformar recomendações intuitivas em soluções matematicamente optimizadas, elevando o impacto das decisões.
 
-## Tarefa
+### Ações
 
-Identificar as causas das ruturas e dos custos elevados e transformar recomendações intuitivas em soluções matematicamente optimizadas, elevando o impacto das decisões.
+**Fase 1 — Análise descritiva e diagnóstica**
 
----
-
-## Ações
-
-### Fase 1 — Análise descritiva e diagnóstica
-
-**O que aconteceu:**
+O que aconteceu:
 - Taxa de atendimento de 80% → 20% dos pedidos não atendidos
-- 14.746 ruturas no último mês (média de 5 ruturas por produto)
+- 14.746 rupturas no último mês (média de 5 rupturas por produto)
 
-**Porque aconteceu — 3 causas identificadas:**
-
+Porque aconteceu — 3 causas identificadas:
 1. **Procura instável** — Desvio padrão ≈ 14, média 25 → 56% de variação → Perda estimada: €465M/ano
 2. **Layout ineficiente** — Zonas A, B, C, D com distribuição homogénea sem considerar giro → Perda estimada: €740M/ano
-3. **Lead time elevado** — Média de 6 dias com alta variabilidade em categorias críticas → Perda estimada: €165M/ano
+3. **Lead time elevado** — Média de 6 dias com alta variabilidade → Perda estimada: €165M/ano
 
-### Fase 2 — Optimização com algoritmos (Simplex + Dijkstra)
+**Fase 2 — Optimização com algoritmos**
 
-**Simplex — Programação Linear:**
+Simplex — Programação Linear:
 - Calculou níveis óptimos de stock para cada categoria
-- Redistribuiu 23% do stock excedente para categorias com maior rutura
-- Impacto adicional: +€98M sobre os €465M iniciais → **Total: €563M**
+- Redistribuiu 23% do stock excedente para categorias com maior ruptura
+- Impacto adicional: +€98M → **Total: €563M**
 
-**Dijkstra — Teoria dos Grafos:**
+Dijkstra — Teoria dos Grafos:
 - Representou o armazém como grafo ponderado (nós = localizações, arestas = corredores × factor de congestionamento)
 - Calculou os caminhos mínimos de picking para cada rota
-- Realocou itens de alto giro para zonas próximas à expedição
 - Redução média de 32% na distância percorrida por pedido (validado em 100 pedidos reais)
-- Impacto adicional: +€162M sobre os €740M iniciais → **Total: €902M**
+- Impacto adicional: +€162M → **Total: €902M**
 
-**Simplex — Problema de Transporte:**
-- Modelou a distribuição como problema de transporte (caso especial de programação linear)
+Simplex — Problema de Transporte:
 - Reduziu de 177 para 51 rotas (-71%)
 - Lead time médio reduzido de 6,0 para 4,3 dias
 - Impacto adicional: +€60M → **Total: €225M**
 
----
-
-## Resultados
+### Resultado
 
 | Acção | Antes | Depois | Ganho |
-|---|---|---|---|
+|-------|-------|--------|-------|
 | Previsão + Stock | €465M | €563M | +€98M |
 | Layout + Rotas de picking | €740M | €902M | +€162M |
 | Lead time + Transporte | €165M | €225M | +€60M |
@@ -83,38 +75,93 @@ A aplicação de modelos matemáticos gerou **+30% de impacto** face à análise
 
 ---
 
-## Próximos Passos
+## STAR — English
 
-| Prazo | Acção | Responsável |
-|---|---|---|
-| 30 dias | Implementar modelo Simplex para optimização de stocks | Dados / TI |
-| 60 dias | Mapear grafo do armazém e testar rotas Dijkstra | Operações |
-| 90 dias | Integrar modelo de transporte ao WMS | TI / Logística |
-| 120 dias | Medir redução real de deslocamento e custos | Análise |
+### Situation
+Warehouse with 3,204 products across 5 categories (Pharma, Electronics and others). Average service level of **80%**, generating **14,746 stockouts per month** and estimated revenue losses of **€630 million/year**.
+
+Total logistics cost of €17.7 billion/year:
+- Storage cost: €2.83B — Pharma (4.27%) and Electronics (4.24%) led
+- Handling cost: €14.87B — Pharma (4.40%) with highest cost
+
+### Task
+Identify the root causes of stockouts and elevated costs, and transform intuitive recommendations into mathematically optimised solutions to maximise decision impact.
+
+### Actions
+
+**Phase 1 — Descriptive and Diagnostic Analysis**
+
+What happened:
+- 80% service level → 20% of orders unfulfilled
+- 14,746 stockouts in the last month (average 5 per product)
+
+Why it happened — 3 causes identified:
+1. **Unstable demand** — Standard deviation ≈ 14, mean 25 → 56% variation → Estimated loss: €465M/year
+2. **Inefficient layout** — Zones A, B, C, D with uniform distribution ignoring turnover → Estimated loss: €740M/year
+3. **High lead time** — Average 6 days with high variability in critical categories → Estimated loss: €165M/year
+
+**Phase 2 — Algorithm-based Optimisation**
+
+Simplex — Linear Programming:
+- Calculated optimal stock levels for each category
+- Redistributed 23% of surplus stock to highest-stockout categories
+- Additional impact: +€98M → **Total: €563M**
+
+Dijkstra — Graph Theory:
+- Modelled warehouse as weighted graph (nodes = locations, edges = corridors × congestion factor)
+- Calculated minimum picking paths for each route
+- Average 32% reduction in distance per order (validated on 100 real orders)
+- Additional impact: +€162M → **Total: €902M**
+
+Simplex — Transportation Problem:
+- Reduced from 177 to 51 routes (-71%)
+- Average lead time reduced from 6.0 to 4.3 days
+- Additional impact: +€60M → **Total: €225M**
+
+### Result
+
+| Action | Before | After | Gain |
+|--------|--------|-------|------|
+| Forecast + Stock | €465M | €563M | +€98M |
+| Layout + Picking routes | €740M | €902M | +€162M |
+| Lead time + Transport | €165M | €225M | +€60M |
+| **TOTAL** | **€1.05B** | **€1.37B** | **+€320M** |
+
+**Average implementation ROI: 420%**  
+Mathematical modelling generated **+30% impact** compared to descriptive analysis alone.
 
 ---
 
-## Ficheiros deste repositório
+## Repository Structure
 
 ```
-📄 README.md                  ← este documento
-📄 relatorio-executivo.pdf    ← relatório de 1 página (análise completa)
-📁 dados/
-   🖼 dados-sujos.png         ← dados em estado bruto antes do tratamento
-   🖼 dados-tratados.png      ← dados após limpeza e estruturação
-📁 dashboard/
-   🖼 dashboard.png           ← dashboard Power BI (screenshot)
-📁 scripts/
-   📄 analise.sql             ← queries SQL utilizadas na análise
+📁 projecto-logistica/
+   📄 README.md                    ← this file
+   📄 executive-report-en.pdf      ← 1-page executive report (EN)
+   📄 relatorio-executivo-pt.pdf   ← relatório executivo (PT)
+   📄 apresentacao-executiva.pptx  ← executive presentation
+   📁 dados/
+      📄 dataset-anonimizado.xlsx  ← anonymised dataset
+   📁 scripts/
+      📄 etl_pipeline.py           ← ETL automation pipeline
+      📄 simplex_model.py          ← Linear Programming model
+      📄 dijkstra_routes.py        ← Route optimisation model
+   📁 notebooks/
+      📄 sql-analysis.ipynb        ← SQL analysis (Google Colab)
 ```
 
 ---
 
-## Ferramentas utilizadas
+## Next Steps (Implementation Roadmap)
 
-`Excel` `SQL` `Power BI` `Simplex` `Dijkstra` `Estatística descritiva` `Programação linear`
+| Timeline | Action | Owner |
+|----------|--------|-------|
+| 30 days | Implement Simplex model for stock optimisation | Data / IT |
+| 60 days | Map warehouse graph and test Dijkstra routes | Operations |
+| 90 days | Integrate transport model with WMS | IT / Logistics |
+| 120 days | Measure real reductions in distance and cost | Analytics |
 
 ---
 
-*Projecto desenvolvido como parte do portfolio de análise de dados e investigação operacional.*  
-*Kresio Azevedo Fernado · [in/kresio-data-bi-business-analyst](https://www.linkedin.com/in/kresio-data-bi-business-analyst/) · kresiofernando@hotmail.com*
+*Project developed as part of the BI & Decision Optimisation portfolio.*  
+*[Kresio Azevedo Fernando](https://www.linkedin.com/in/kresio-bi-business-data-analyst/) · kresiofernando@hotmail.com · [kresio-azevedo-fernando.github.io](https://kresio-azevedo-fernando.github.io)*
